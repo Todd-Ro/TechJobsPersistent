@@ -12,5 +12,7 @@ namespace TechJobsPersistent.Models
         public JobSkill()
         {
         }
+
+        
     }
 }

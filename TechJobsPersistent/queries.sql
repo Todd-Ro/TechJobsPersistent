@@ -24,3 +24,14 @@ WHERE Location="St. Louis City";
 
 --Part 3
 
+-- Without the restriction that it must be attached to a job, the query would be
+SELECT Name 
+FROM skills
+WHERE Id is not null
+ORDER BY Name;
+
+--With this restriction, the query is
+SELECT skills.Name
+FROM skills
+INNER JOIN jobskills ON jobskills.SkillId = skills.Id
+ORDER BY skills.Name;
