@@ -16,6 +16,9 @@ namespace TechJobsPersistent.ViewModels
 
         public Job Job { get; set; }
 
+        //The Skill class' fields are Id, Name, and Description
+        //One of Skill's constructors takes arguments (string name, string description)
+
         public List<SelectListItem> Skills { get; set; }
 
         public AddJobSkillViewModel(Job theJob, List<Skill> possibleSkills)

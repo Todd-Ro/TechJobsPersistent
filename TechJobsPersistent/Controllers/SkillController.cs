@@ -34,6 +34,8 @@ namespace TechJobsPersistent.Controllers
             return View(skill);
         }
 
+        //The form in Views/Skill/Add has 
+        // asp-action="Add" method="post"
         [HttpPost]
         public IActionResult Add(Skill skill)
         {
