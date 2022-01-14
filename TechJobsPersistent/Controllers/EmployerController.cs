@@ -57,6 +57,10 @@ namespace TechJobsPersistent.Controllers
         // asp-action="ProcessAddEmployerForm" method="post"
         public IActionResult ProcessAddEmployerForm(Employer employer)
         {
+            AddEmployerViewModel addEmployerViewModel = 
+                new AddEmployerViewModel(employer.Name, employer.Location);
+            /*Employer employer = 
+                new Employer(addEmployerViewModel.Name, addEmployerViewModel.Location);*/
             if (ModelState.IsValid)
             {
                 empContext.Employers.Add(employer);

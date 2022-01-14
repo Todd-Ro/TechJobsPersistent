@@ -1,10 +1,25 @@
-﻿<h1>Add a Job</h1>
+﻿@using TechJobsPersistent.ViewModels
+@model AddJobViewModel
+
+<h1>Add a Job</h1>
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" />
+        <label asp-for=Name>Name</label>
+        <input asp-for=Name class="form-control" />
         <span></span>
+    </div>
+
+    <!--ASP will let us create an entire select list without a foreach loop-->
+
+    <div class="form-group">
+        <label asp-for="EmployerId">Employer</label>
+        <select asp-for="EmployerId" asp-items="Model.Employers">
+            <!--asp-items is all the select items that the user will choose from.
+                asp-for dictates what values are submitted when form is submitted.
+            -->
+        </select>
+        <span><a asp-controller="Employer" asp-action="Add">Add a new employer</a></span>
     </div>
 
     <input type="submit" value="Add Job" />
